@@ -1,0 +1,7 @@
+
+<% if !user_signed_in? %>
+  <% render '/layouts/navbar-guest' %>
+<% else %>
+  <% render '/layouts/navbar-user' %>
+
+<% end %>
