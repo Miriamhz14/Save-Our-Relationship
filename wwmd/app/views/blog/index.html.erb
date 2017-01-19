@@ -1,2 +1,57 @@
-<h1>Blog#index</h1>
-<p>Find me in app/views/blog/index.html.erb</p>
+<% if !user_signed_in? %>
+Not Signed In
+  <style>
+    body {
+      background: url("letterMicon.jpg") no-repeat center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    h1 {
+      color: white;
+      font-weight: bold;
+    }
+    .landing {
+      margin-right: 15%;
+      margin-left: 15%;
+    }
+    .text {
+      color: white;
+      font-weight: 300;
+      font-size: 150%;
+    }
+    .footer {
+      text-align: center;
+      color: white;
+      margin-top: 30%;
+    }
+  </style>
+
+  <div class="landing">
+      <div class="col-sm-6">
+        <h1> Welcome to WWMD </h1>
+        <p class="text">
+        </p>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="log-in">
+        Log In
+        </div>
+        <div class="sign-up">
+        Sign Up
+        </div>
+       </div>
+
+       <div class="col-sm-12">
+    <p class="footer">
+      About Blog Jobs Media Developer  &copy;WWMD
+    </p>
+    </div>
+  </div>
+
+<% else %>
+  <script> document.location = '/home' </script>
+
+<% end %>

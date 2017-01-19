@@ -1,4 +1,10 @@
-
+<div class="row">
+  <div class="col-xs-12">
+    <div class="jumbotron">
+      <%= @username %>
+    </div>
+  </div>
+</div>
 
 <div class="row">
   <div class="col-xs-4">
@@ -9,12 +15,33 @@
       </div>
   </div>
 
-  <div class="col-xs-7">
-    <div class="panel panel-default">
+  <div class="col-xs-6">
+    <%= render '/components/postForm' %>
+     <% for @p in @posts %>
+    <div class="panel panel-default post-panel">
+          <div class="panel-body row">
+            <div class="col-sm-1">
+            <img class="pro-img" src="/lettermicon.jpg" height="50px" width="50px"> </img>
+            </div>
+
+            <div class="col-sm-11">
+              <p class="post-title"><span class="post-owner"> <%= User.find(@p.user_id).username %></span><span class="post-creation"> - <%= @p.created_at.to_formatted_s(:time) %></span>
+              <p class="post-content"> <%= @p.content %> </p>
+              <p class="post-link">
+              <span class="glyphicon glyphicon-heart g-links" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-option-horizontal g-links" aria-hidden="true"></span>
+              <a href=" "> Comments </a>
+              </p>
+            </div>
+
+          </div>
+      </div>
+
         <div class="panel-body">
-          <p>Blog Feed</p>
+          <p><%= @p.content %></p>
         </div>
       </div>
+          <% end %>
   </div>
 
 <!-- closing div for class row -->

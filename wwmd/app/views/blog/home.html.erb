@@ -1,29 +1,60 @@
 <div class="row">
-  <div class="col-xs-12">
-    <div class="jumbotron">
-      What Would Miriam Do?
+    <div class="col-xs-3">
+        <div class="panel panel-default">
+          <div class="panel-img hide-panel-body">
+            <img src=" ">
+          </div>
+
+          <div class="panel-footer">
+            <div class="row">
+              <div class="col-sm-2">
+                <img src="/avatar.jp" height="45px" width="45px" class="pro-img home">
+              </div>
+              <div class="col-sm-10">
+              <h4 style="text-align: center;"><%= current_user.username %> </h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-body">
+            <p> profile</p>
+          </div>
+        </div>
     </div>
-  </div>
+<!-- container for the blog post -->
+    <div class="col-xs-6">
+      <%= render '/components/postForm' %> <br> <br>
+      <% for @p in @posts %>
+        <div class="panel panel-default post-panel">
+          <div class="panel-body row">
+            <div class="col-sm-1">
+            <img class="pro-img" src="/lettermicon.jpg" height="50px" width="50px"> </img>
+            </div>
+
+            <div class="col-sm-11">
+              <p class="post-title"><span class="post-owner"> <%= User.find(@p.user_id).username %></span><span class="post-creation"> - <%= @p.created_at.to_formatted_s(:time) %></span>
+              <p class="post-content"> <%= @p.content %> </p>
+              <p class="post-link">
+              <span class="glyphicon glyphicon-heart g-links" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-option-horizontal g-links" aria-hidden="true"></span>
+              <a href=" "> Comments </a>
+              </p>
+            </div>
+
+          </div>
+      </div>
+      <% end %>
+<!-- end of container -->
+</div>
 </div>
 
-<div class="row">
-  <div class="col-xs-4">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <p>Profile</p>
-        </div>
-      </div>
-  </div>
+ <div class="col-sm-12">
+    <p class="footer">
+      About Blog Jobs Media Developer  &copy;WWMD
+    </p>
+    </div>
 
-  <div class="col-xs-7">
-    <div class="panel panel-default">
-        <div class="panel-body">
-          <p>Blog Feed</p>
-        </div>
-      </div>
-  </div>
 
-<!-- closing div for class row -->
-</div>
+
 
 
