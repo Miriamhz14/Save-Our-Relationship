@@ -19,21 +19,29 @@
 @import "bootstrap";
 
 body {
-  background-color: #DDA0DD;
+  background-color: #54457F;
 }
 
 .navbar {
-  background-color: white;
+  background-color: #77878B;
+  border:none;
 }
 
 .navbar-brand {
+  font-family: 'Rye', cursive;
   left: 50%;
   margin-right: 25px !important;
   display: block;
 }
 
+
 .pro-img {
   border-radius: 5%;
+}
+
+.panel{
+  background-color: #77878B;
+  border: none;
 }
 
 .post-panel {
@@ -43,6 +51,11 @@ body {
 .post-title {
   text-align: left;
   margin-left: 15px;
+}
+
+.panel-footer{
+  background: #3E4C5E;
+  border: none;
 }
 
 .post-content {
@@ -68,6 +81,34 @@ body {
   font-size: 120%;
   margin-right: 25%;
 }
+
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: center;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: center;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: center;
+ }
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: center;
+ }
 
 
 

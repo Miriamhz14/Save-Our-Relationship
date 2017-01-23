@@ -7,6 +7,8 @@ class BlogController < ApplicationController
   def home
     @posts = Post.all
     @newPost = Post.new
+    @comments = Comment.all
+    @newComment = Comment.new
   end
 
   def profile
@@ -15,7 +17,11 @@ class BlogController < ApplicationController
       else
         redirect_to root_path, :notice=> "User Not Found"
     end
-      @posts = Post.all.where("user_id = ?", User.find_by_username(params[:id]).id)
+      @posts = Post.all.where("user_id = ?", User.find_by_username(params[:id]))
       @newPost = Post.new
+      @comments = Comment.all.where("user_id = ?", User.find_by_username(params[:id]))
+      @newComment = Comment.new
   end
+
+
 end

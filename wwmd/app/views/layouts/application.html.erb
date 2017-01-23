@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Wwmd</title>
-    <%= csrf_meta_tags %>
-
+    <title>WWMD</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
   </head>
 
   <body>
    <%= render '/layouts/navbar' %>
+   <% if params[:id] != nil %>
+    <% url = '/' + params[:id] %>
+    <% if current_page? (url) %>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="container">
+            <div class="col-sm-8" style="text-align: right, margin-right: 5px;"><a href="/"<%= current_user.username %>"></a></div>
+          </div>
+        </div>
+      </div>
+     <% end%>
+     <% end %>
 
    <div class="container">
-       <span class="notice"><%= notice %></span>
-       <span class="alert"><%= alert %></span>
-    <%= yield %>
+      <% flash.each do |key, value| %>
+      <center><div class="alert alert-<%= key %>" style="width: 50%;"><%= value %></div></center>
+      <% end %>
+      <%= yield %>
     </div>
-
-  </body>
+</body>
 </html>

@@ -8,16 +8,17 @@
           <div class="panel-footer">
             <div class="row">
               <div class="col-sm-2">
-                <img src="/avatar.jp" height="45px" width="45px" class="pro-img home">
+                <%= image_tag(current_user.photo.url(:thumb)) %>
               </div>
               <div class="col-sm-10">
-              <h4 style="text-align: center;"><%= current_user.username %> </h4>
+                <a href="/<%=  current_user.username %>" style="text-decoration: none;">
+                  <h4 style="text-align: center; color: #77878B;"><%= current_user.username %> </h4>
+                </a>
               </div>
             </div>
           </div>
 
           <div class="panel-body">
-            <p> profile</p>
           </div>
         </div>
     </div>
@@ -28,18 +29,19 @@
         <div class="panel panel-default post-panel">
           <div class="panel-body row">
             <div class="col-sm-1">
-            <img class="pro-img" src="/lettermicon.jpg" height="50px" width="50px"> </img>
+            <%= image_tag(User.find(@p.user_id).photo.url(:thumb)) %>
             </div>
 
             <div class="col-sm-11">
-              <p class="post-title"><span class="post-owner"> <%= User.find(@p.user_id).username %></span><span class="post-creation"> - <%= @p.created_at.to_formatted_s(:time) %></span>
-              <p class="post-content"> <%= @p.content %> </p>
-              <p class="post-link">
-              <span class="glyphicon glyphicon-heart g-links" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-option-horizontal g-links" aria-hidden="true"></span>
-              <a href=" "> Comments </a>
-              </p>
+              <p class="post-title">
+              <a href="/<%=  User.find(@p.user_id).username %>" style="text-decoration: none;">
+                <span class="post-owner" style="color: #3E4C5E;"> <%= User.find(@p.user_id).username %></span>
+              </a>
+              <span class="post-creation"> - <%= @p.created_at.strftime('%I:%M') %></span>
+              <p class="post-content" style="color: #3E4C5E;"> <%= @p.content %> </p>
+              <!-- for the comments -->
             </div>
+
 
           </div>
       </div>
@@ -47,12 +49,13 @@
 <!-- end of container -->
 </div>
 </div>
-
+<!-- footer -->
  <div class="col-sm-12">
     <p class="footer">
       About Blog Jobs Media Developer  &copy;WWMD
     </p>
     </div>
+<!-- end of footer -->
 
 
 
