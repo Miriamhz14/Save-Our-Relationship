@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
-    @comment.user_id = current_user.id
+    @comment.user = current_user
     respond_to do |f|
       if (@comment.save)
         f.html { redirect_to :back, notice: "Comment Created"}
