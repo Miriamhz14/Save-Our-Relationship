@@ -20,7 +20,7 @@ then run a bundle install
     my thoughts.
 
 ### Wireframes and ERDs
-![alt tag](http://imgur.com/yFDV8eD)
+[Imgur](http://i.imgur.com/yFDV8eDm.jpg)
 ![alt tag](http://imgur.com/AVPjwFg)
 ![alt tag](http://imgur.com/d59mTqN)
 ![alt tag](http://imgur.com/84alvJS)
