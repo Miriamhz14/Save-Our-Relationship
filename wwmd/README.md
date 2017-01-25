@@ -21,9 +21,9 @@ then run a bundle install
 
 ### Wireframes and ERDs
 [Imgur](http://i.imgur.com/yFDV8eDm.jpg)
-![alt tag](http://imgur.com/AVPjwFg)
-![alt tag](http://imgur.com/d59mTqN)
-![alt tag](http://imgur.com/84alvJS)
+[Imgur](http://imgur.com/AVPjwFg)
+[Imgur](http://imgur.com/d59mTqN)
+[Imgur](http://imgur.com/84alvJS)
 
 
 ### Unsolved Problems/ Major Hurdles
